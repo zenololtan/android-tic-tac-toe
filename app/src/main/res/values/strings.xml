@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">tic-tac-toe</string>
+    <string name="content_cell">Select Cell</string>
+    <string name="label_reset">Reset</string>
+    <string name="message_draw">Draw!</string>
+    <string name="message_circle_win">Circle Wins!</string>
+    <string name="message_x_win">X Wins!</string>
+</resources>

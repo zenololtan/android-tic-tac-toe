@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--  Cells  -->
+
+    <ImageView
+        android:id="@+id/cell_4"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        />
+
+    <ImageView
+        android:id="@+id/cell_0"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toStartOf="@id/cell_4"
+        app:layout_constraintBottom_toTopOf="@id/cell_4"
+        />
+
+    <ImageView
+        android:id="@+id/cell_1"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toEndOf="@id/cell_4"
+        app:layout_constraintBottom_toTopOf="@id/cell_4"
+        />
+
+    <ImageView
+        android:id="@+id/cell_2"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toEndOf="@id/cell_4"
+        app:layout_constraintBottom_toTopOf="@id/cell_4"
+        />
+
+    <ImageView
+        android:id="@+id/cell_3"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toStartOf="@id/cell_4"
+        app:layout_constraintBottom_toBottomOf="@id/cell_4"
+        />
+
+    <ImageView
+        android:id="@+id/cell_5"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toEndOf="@id/cell_4"
+        app:layout_constraintBottom_toBottomOf="@id/cell_4"
+        />
+
+    <ImageView
+        android:id="@+id/cell_6"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toStartOf="@id/cell_4"
+        app:layout_constraintTop_toBottomOf="@id/cell_4"
+        />
+
+    <ImageView
+        android:id="@+id/cell_7"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toStartOf="@id/cell_4"
+        app:layout_constraintTop_toBottomOf="@id/cell_4"
+        />
+
+    <ImageView
+        android:id="@+id/cell_8"
+        android:contentDescription="@string/content_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toEndOf="@id/cell_4"
+        app:layout_constraintTop_toBottomOf="@id/cell_4"
+        />
+
+<!--  Gridlines  -->
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/cell_4"
+        app:layout_constraintStart_toStartOf="@id/cell_0"
+        app:layout_constraintEnd_toEndOf="@id/cell_2"
+        />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/cell_4"
+        app:layout_constraintStart_toStartOf="@id/cell_0"
+        app:layout_constraintEnd_toEndOf="@id/cell_2"
+        />
+
+    <FrameLayout
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="@id/cell_0"
+        app:layout_constraintBottom_toBottomOf="@id/cell_6"
+        app:layout_constraintStart_toEndOf="@id/cell_0"
+        />
+
+    <FrameLayout
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="@id/cell_0"
+        app:layout_constraintBottom_toBottomOf="@id/cell_6"
+        app:layout_constraintStart_toEndOf="@id/cell_4"
+        />
+
+<!--  Buttons  -->
+    
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cell_6"
+        />
+
+<!--  Messages  -->
+
+    <TextView
+        android:id="@+id/text_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:colorBackground"
+        android:textAlignment="center"
+        android:padding="18dp"
+        android:textSize="36sp"
+        android:alpha="0.9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Winner is ... !"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
