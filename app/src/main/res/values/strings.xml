@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">tic-tac-toe</string>
+    <string name="title">Tic Tac Toe</string>
     <string name="content_cell">Select Cell</string>
     <string name="label_reset">Reset</string>
+    <string name="label_single_player">Single Player</string>
+    <string name="label_multiplayer">Multiplayer</string>
+    <string name="label_home">Home</string>
     <string name="message_draw">Draw!</string>
     <string name="message_circle_win">Circle Wins!</string>
     <string name="message_x_win">X Wins!</string>
