@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.ztan.tic_tac_toe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,9 +19,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun bindButtons() = with(binding) {
         buttonSinglePlayer.setOnClickListener {
-            val intent = Intent(this@MainActivity, SinglePlayerActivity::class.java)
+            val intent = Intent(this@MainActivity, GameActivity::class.java)
+            intent.putExtra("mode", 0)
             startActivity(intent)
         }
-        buttonMultiPlayer.setOnClickListener { Toast.makeText(this@MainActivity, "Multi Player", Toast.LENGTH_SHORT).show() }
+        buttonMultiPlayer.setOnClickListener {
+            val intent = Intent(this@MainActivity, GameActivity::class.java)
+            intent.putExtra("mode", 1)
+            startActivity(intent)
+        }
     }
 }

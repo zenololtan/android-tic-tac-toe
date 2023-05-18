@@ -6,21 +6,21 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.ztan.tic_tac_toe.databinding.ActivitySinglePlayerBinding
+import com.ztan.tic_tac_toe.databinding.ActivityGameBinding
 import com.ztan.tic_tac_toe.models.Board
 import com.ztan.tic_tac_toe.models.BoardState
 import com.ztan.tic_tac_toe.models.Cell
 
-class SinglePlayerActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySinglePlayerBinding
-    private val vm: SinglePlayerActivityViewModel by viewModels()
-
+class GameActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityGameBinding
+    private val vm: GameActivityViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySinglePlayerBinding.inflate(layoutInflater)
+        binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
         vm.liveBoard.observe(this, onBoardChange)
-        bindButtons()
+        val mode: Int = intent.getIntExtra("mode", 0)
+        bindButtons(mode)
     }
 
     private val onBoardChange = Observer { board: Board ->
@@ -40,21 +40,21 @@ class SinglePlayerActivity : AppCompatActivity() {
         binding.cell8.setImageResource(board.getState(Cell.BOTTOM_RIGHT).res)
     }
 
-    private fun bindButtons() = with(binding) {
+    private fun bindButtons(mode: Int) = with(binding) {
         buttonHome.setOnClickListener {
-            val intent = Intent(this@SinglePlayerActivity, MainActivity::class.java)
+            val intent = Intent(this@GameActivity, MainActivity::class.java)
             startActivity(intent)
         }
         buttonReset.setOnClickListener { vm.resetBoard() }
-        cell0.setOnClickListener { vm.cellClicked(Cell.TOP_LEFT) }
-        cell1.setOnClickListener { vm.cellClicked(Cell.TOP_CENTER) }
-        cell2.setOnClickListener { vm.cellClicked(Cell.TOP_RIGHT) }
-        cell3.setOnClickListener { vm.cellClicked(Cell.CENTER_LEFT) }
-        cell4.setOnClickListener { vm.cellClicked(Cell.CENTER_CENTER) }
-        cell5.setOnClickListener { vm.cellClicked(Cell.CENTER_RIGHT) }
-        cell6.setOnClickListener { vm.cellClicked(Cell.BOTTOM_LEFT) }
-        cell7.setOnClickListener { vm.cellClicked(Cell.BOTTOM_CENTER) }
-        cell8.setOnClickListener { vm.cellClicked(Cell.BOTTOM_RIGHT) }
+        cell0.setOnClickListener { vm.cellClicked(Cell.TOP_LEFT, mode) }
+        cell1.setOnClickListener { vm.cellClicked(Cell.TOP_CENTER, mode) }
+        cell2.setOnClickListener { vm.cellClicked(Cell.TOP_RIGHT, mode) }
+        cell3.setOnClickListener { vm.cellClicked(Cell.CENTER_LEFT, mode) }
+        cell4.setOnClickListener { vm.cellClicked(Cell.CENTER_CENTER, mode) }
+        cell5.setOnClickListener { vm.cellClicked(Cell.CENTER_RIGHT, mode) }
+        cell6.setOnClickListener { vm.cellClicked(Cell.BOTTOM_LEFT, mode) }
+        cell7.setOnClickListener { vm.cellClicked(Cell.BOTTOM_CENTER, mode) }
+        cell8.setOnClickListener { vm.cellClicked(Cell.BOTTOM_RIGHT, mode) }
     }
 
     private fun updateGameStatus(boardState: BoardState) = when(boardState) {

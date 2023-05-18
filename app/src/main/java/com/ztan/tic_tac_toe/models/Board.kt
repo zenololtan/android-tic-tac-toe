@@ -1,6 +1,6 @@
 package com.ztan.tic_tac_toe.models
 
-class Board(private val gameBoard:MutableMap<Cell, CellState> = mutableMapOf()) {
+class Board(private val gameBoard: MutableMap<Cell, CellState> = mutableMapOf()) {
     fun getState(cell: Cell) : CellState {
         return gameBoard[cell] ?: CellState.empty
     }

@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/button_single_player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:text="@string/label_single_player"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
@@ -31,11 +31,10 @@
 
     <Button
         android:id="@+id/button_multi_player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:text="@string/label_multiplayer"
         android:layout_marginTop="15dp"
-        android:padding="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/button_single_player"
         />
